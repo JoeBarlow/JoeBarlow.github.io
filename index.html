@@ -1,7 +1,207 @@
 <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <html>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <link rel="stylesheet" href="style.css">
+
+    <div class="banner_text" style="margin-left: 1%">Joe Barlow</div>
+    <div class="banner_text" style="justify-content: center">Gameplay Programmer</div>
+    <div class="icon_container">
+        <div class="cv_icon" onclick="LoadCV(0)">View CV</div>
+        <img src="Pictures/github.png" alt="GitHub" class="icon" onclick="LoadGitHub()">
+        <img src="Pictures/linked_in.png" alt="LinkedIn" class="icon" style="margin-right: 1%" onclick="LoadLinkedIn()">
+    </div>
+    <div class="topbanner"></div>
+
+    <div class="profile_box">
+        <img src="Pictures/profile_pic.jpg" alt="Profile_Picture" class="profile_pic">
+        <div class="skills_box">
+            <div class="skills_header">Tools</div>
+            <div class="graph">
+                <div class="graph_item" style="height:70%"><p>Unity</p></div>
+                <div class="graph_item" style="height:50%"><p>Unreal</p></div>
+                <div class="graph_item" style="height:60%"><p>Jira</p></div>
+                <div class="graph_item" style="height:70%"><p>Perforce</p></div>
+                <div class="graph_item" style="height:50%"><p>Github</p></div>
+                <div class="graph_item" style="height:20%"><p>Blender</p></div>
+            </div>
+            <div class="skills_header">Languages</div>
+            <div class="graph">
+                <div class="graph_item" style="height:70%"><p>C#</p></div>
+                <div class="graph_item" style="height:65%"><p>C++</p></div>
+                <div class="graph_item" style="height:50%"><p>Java</p></div>
+                <div class="graph_item" style="height:20%"><p>HLSL</p></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="projects_container">
+        <!---->
+        <div class="project_window">
+            <video src="Videos/TerrainGenerator.mp4" class="media_format" autoplay muted loop></video>
+
+            <div class="Letterboxing Letterboxing-Top">
+                <h1>Procedural Terrain Generator</h1>
+            </div>
+            <div class="Letterboxing Letterboxing-Bottom">
+                <h4>Implemented Features:</h4>
+                <ul class="feature_list">
+                    <li>Marching cubes algorithm</li>
+                    <li>3D Perlin Noise</li>
+                    <li>Scriptable object for custom biomes</li>
+                </ul>
+            </div>
+
+            <div class="project_specifications" id="ignore_element">
+                <div class="specs_item"><p>Unity</p></div>
+                <div class="specs_item"><p>3D</p></div>
+                <div class="specs_item"><p>C#</p></div>
+                <div class="specs_item"><p>ShaderLab</p></div>
+
+            </div>
+            <div class="project_link" onclick="LoadPage(1)"></div>
+        </div>
+        <!---->
+        <div class="project_window">
+            <video src="Videos/KitchenNightmare.mp4" class="media_format" autoplay muted loop></video>
+
+            <div class="Letterboxing Letterboxing-Top">
+                <h1>Kitchen Nightmare</h1>
+            </div>
+            <div class="Letterboxing Letterboxing-Bottom">
+                <h4>Implemented Features:</h4>
+                <ul class="feature_list">
+                    <li>Procedural Dungeon Generator</li>
+                    <li>Attack / Weapon System</li>
+                    <li>Tutorial Mechanics</li>
+                </ul>
+            </div>
+
+            <div class="project_specifications" id="ignore_element">
+                <div class="specs_item"><p>Unity</p></div>
+                <div class="specs_item"><p>2.5D</p></div>
+                <div class="specs_item"><p>C#</p></div>
+
+            </div>
+            <div class="project_link" onclick="LoadPage(4)"></div>
+        </div>
+        <!---->
+        <div class="project_window">
+            <video src="Videos/AttackSystem.mp4" class="media_format" autoplay muted loop></video>
+
+            <div class="Letterboxing Letterboxing-Top">
+                <h1>Freeflow Combat System</h1>
+            </div>
+            <div class="Letterboxing Letterboxing-Bottom">
+                <h4>Implemented Features:</h4>
+                <ul class="feature_list">
+                    <li>Finite state machine</li>
+                    <li>Animations with root motion</li>
+                    <li>Parry system</li>
+                </ul>
+            </div>
+
+            <div class="project_specifications" id="ignore_element">
+                <div class="specs_item"><p>UE4</p></div>
+                <div class="specs_item"><p>3D</p></div>
+                <div class="specs_item"><p>C++</p></div>
+                <div class="specs_item"><p>Blueprints</p></div>
+
+            </div>
+            <div class="project_link" onclick="LoadPage(2)"></div>
+        </div>
+        <!---->
+        <div class="project_window">
+            <video src="Videos/CrystalCasters.mp4" class="media_format" autoplay muted loop></video>
+
+            <div class="Letterboxing Letterboxing-Top">
+                <h1>Crystal Casters</h1>
+            </div>
+            <div class="Letterboxing Letterboxing-Bottom">
+                <h4>Implemented Features:</h4>
+                <ul class="feature_list">
+                    <li>Gesture controlled water magic</li>
+                    <li>Interactive belt for wand and crystals</li>
+                    <li>Crystal charging / wisp collection</li>
+                </ul>
+            </div>
+
+            <div class="project_specifications" id="ignore_element">
+                <div class="specs_item"><p>Unity</p></div>
+                <div class="specs_item"><p>MRTK</p></div>
+                <div class="specs_item"><p>VR</p></div>
+                <div class="specs_item"><p>C#</p></div>
+
+            </div>
+            <div class="project_link" onclick="LoadPage(3)"></div>
+        </div>
+        <!---->
+        <div class="project_window">
+            <video src="Videos/TheExperiment.mp4" class="media_format" style="object-fit:fill" autoplay muted loop></video>
+
+            <div class="Letterboxing Letterboxing-Top">
+                <h1>The Experiment</h1>
+            </div>
+            <div class="Letterboxing Letterboxing-Bottom">
+                <h4>Implemented Features:</h4>
+                <ul class="feature_list">
+                    <li>Touch Controls</li>
+                    <li>Unique Player Mechanics</li>
+                    <li>Boss Battle</li>
+                </ul>
+            </div>
+
+            <div class="project_specifications" id="ignore_element">
+                <div class="specs_item"><p>Unity</p></div>
+                <div class="specs_item"><p>Piskel</p></div>
+                <div class="specs_item"><p>2D</p></div>
+                <div class="specs_item"><p>C#</p></div>
+
+            </div>
+            <div class="project_link" onclick="LoadPage(5)"></div>
+        </div>
+        <!---->
+        <div class="project_window">
+            <video src="Videos/TreasureIsland.mp4" class="media_format" style="object-fit:fill" autoplay muted loop></video>
+
+            <div class="Letterboxing Letterboxing-Top">
+                <h1>Treasure Island</h1>
+            </div>
+            <div class="Letterboxing Letterboxing-Bottom">
+                <h4>Implemented Features:</h4>
+                <ul class="feature_list">
+                    <li>Local Multiplayer</li>
+                    <li>Player Combat</li>
+                    <li>Colour Select</li>
+                </ul>
+            </div>
+
+            <div class="project_specifications" id="ignore_element">
+                <div class="specs_item"><p>Unity</p></div>
+                <div class="specs_item"><p>2.5D</p></div>
+                <div class="specs_item"><p>C#</p></div>
+
+            </div>
+            <div class="project_link" onclick="LoadPage(6)"></div>
+        </div>
+
+
+    </div>
+
+    <div class="about_me">
+        <h2>About Me</h2>
+        <p>
+            My name is Joe Barlow and I’m a Gameplay Programmer who graduated from the University of Chester.
+            I am experienced in agile development and have used project tracking tools such as Jira to complete work in University and out.
+            I am confident working in both Unity and Unreal being most proficient in player mechanics and weapon systems.
+        </p>
+    </div>
+
+    <div class="soft_skills"></div>
+
+    <script src="main.js"></script>
+    <script src="button.js" defer></script>
 </body>
 </html>

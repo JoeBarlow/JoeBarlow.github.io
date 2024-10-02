@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+<body>
+    <link rel="stylesheet" href="Page_Styles.css">
+
+    <!--Top Banner-->
+    <div class="banner_text" style="margin-left: 1%">Joe Barlow</div>
+    <div class="banner_text" style="justify-content: center">Gameplay Programmer</div>
+    <div class="icon_container">
+        <div class="cv_icon" onclick="LoadCV(1)">View CV</div>
+        <img src="../Pictures/github.png" alt="GitHub" class="icon" onclick="LoadGitHub()">
+        <img src="../Pictures/linked_in.png" alt="LinkedIn" class="icon" style="margin-right: 1%" onclick="LoadLinkedIn()">
+    </div>
+    <div class="topbanner"></div>
+    <div class="back_button" onclick="LoadPage(0)">< Back</div>
+    <!---->
+
+    <div class="main_image">
+        <video src="../Videos/TheExperiment.mp4" class="media_format" autoplay muted loop></video>
+        <div class="title_box">
+            <h5>The Experiment</h5>
+        </div>
+    </div>
+
+    <h3 style="font-size: 1.5em;">If you would like to know more about my contributions to this project or any other please reach out as I'd be happy to discuss my work in greater detail.</h3>
+    <div class="seperation_line_root">
+        <h3 style="font-size: 1.5em;">Introduction</h3>
+        <p style="font-size: 1.5em; text-align: justify">
+            The Experiment is a mobile game developed by myself for a final year university project.
+            The Experiment features 3 unique abilities and 16 playable levels, in order to survive the cell must collect its abilities and solve puzzles to continue its climb.
+        </p>
+    </div>
+
+    <h1 style="margin-top: 2%">Features</h1>
+
+    <div class="grid_container">
+        <!-- -->
+        <div class="info_display">
+            <img src="../Pictures/movement.png" alt="Feature 1" class="feature_size" />
+            <div class="text_box">
+                <h2>Touch Controls:</h2>
+                <p>
+                    The idea behind movement was to use touch controls to ‘fling’ the cell in the opposite direction to where the player dragged.
+                    This was supposed to resemble a slingshot-type movement accompanied by a directional arrow.<br /><br />
+                    The arrow pointer grows outward from the cell to display the direction and power before the player releases the touch.
+                    It does this by subtracting the current position of the player’s finger from the starting position, and rotating and scaling the arrow to match.
+                    However, this implementation quickly became confusing as the player would lose track of where they started the movement from.
+                    Therefore, to supplement the arrow I included a ‘shadow pointer’ which draws a line between the starting and current position of the touch-drag.<br /><br />
+                    Other abilities and interactions were also controlled by touch but were context sensitive. For example, the ‘spike’ ability could only be activated whilst the cell was in the air.
+                </p>
+            </div>
+            <div class="seperation_line"><h3>Why This Approach?</h3></div>
+            <div class="text_box_bottom">
+                <p style="margin-top: 0;">
+                    With touch controls implemented this way, the player can control the character from any point of the screen.
+                    I find this flexibility desirable as the touch-drag can be performed wherever the user pleases and caters to people with varying devices, hand sizes, and grip.
+                </p>
+            </div>
+        </div>
+        <!-- -->
+        <div class="info_display">
+            <img src="../Pictures/abilities.png" alt="Feature 1" class="feature_size" />
+            <div class="text_box">
+                <h2>Spike, Resize, Divide:</h2>
+                <p>
+                    The spike mechanic has a simple concept, it allows the cell to stick to certain walls.
+                    It does this by extending the circle collider of the cell to better match its new form, then waits for a collision with a ‘wall’ object.
+                    If the cell then touches a wall all velocity is removed and gravity is disabled for as long as the interaction is held.<br /><br />
+                    The resize mechanic has one purpose: increase the mass of the cell.
+                    Doing this allows the player to build up more force when falling and destroy cracked floor.
+                    It also resists the force of the fans which allows the player to control their impact.
+                    Size is controlled by pinching the screen and zooming in and out.<br /><br />
+                    The divide mechanic splits the cell into two when the divide wall is hit.
+                    Doing so will reduce the cell's maximum growth size but allows the player to control both cells at once.
+                    Each cell can be controlled by interacting with its relevant side of the screen, whether it be horizontal or vertical.
+                </p>
+            </div>
+            <div class="seperation_line"><h3>Why This Approach?</h3></div>
+            <div class="text_box_bottom">
+                <p style="margin-top: 0;">
+                    Although very simple, these mechanics provide a lot of flexibility in level design and can build on each other to provide complexity.
+                    The controls closely resemble standard phone inputs to make them more intuitive.
+                </p>
+            </div>
+        </div>
+        <!-- -->
+        <div class="info_display">
+            <video src="../Videos/BossBattle.mp4" class="feature_size" autoplay muted loop></video>
+            <div class="text_box">
+                <h2>Boss Battle:</h2>
+                <p>
+                    The boss battle in The Experiment takes place on the highest level which turns out to be the top of a bottle.
+                    The cell must repeatedly strike the cork in the top of the bottle to remove it and earn freedom.<br /><br />
+                    However, to climb high enough the player must use the spike ability to stick to falling walls and avoid the sharp edges on the bottom.
+                    The walls are spawned randomly between 3 points in the left, middle, and right.
+                    This creates lanes of danger and safety, encouraging the player to plan ahead.<br /><br />
+                    The final mechanic starts once the boss' health is below 50%.
+                    The room is divided into 2 and falling spikes are dropped on the player’s side.
+                    To avoid being squashed the player must quickly hit the divide wall in the centre, discarding the previous cell and evading death.
+                </p>
+            </div>
+            <div class="seperation_line"><h3>Why This Approach?</h3></div>
+            <div class="text_box_bottom">
+                <p style="margin-top: 0;">
+                    Thematically, I liked the reveal that ‘The Experiment’ was trying to escape its test bottle this whole time.
+                    The boss battle being in a slightly different format than the usual upward climb is also a nice change of pace, and shows how versatile the mechanics are.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="seperation_line_root" style="margin-top: 10%">
+        <h3 style="font-size: 1.5em;">What I Learned</h3>
+        <p style="font-size: 1.5em; text-align: justify; padding-bottom: 5%">
+            As I was the sole developer on this project I play-tested the game a lot.
+            After getting quite good my perspective of what made a level difficult was skewed.
+            I believe the early game of ‘The Experiment’ is far too difficult and mechanics are introduced a lot earlier than needed.
+            If I were to rework these levels I would take my time and allow the difficulty to progress gradually.
+            Level one should really be no more than a couple of jumps - difficulty aside it's also important to be introduced to a reward loop as soon as possible.<br /><br />
+            Another more simple lesson is to consider how a mobile game will scale with the varying screen size and aspect ratio of different devices.
+            Especially if the walls are supposed to be the border of the screen.
+        </p>
+    </div>
+
+    <script src="../main.js"></script>
+    <script src="../button.js" defer></script>
+</body>
+</html>

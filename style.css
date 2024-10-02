@@ -1,0 +1,254 @@
+html {
+    font-size: 14px;
+}
+
+body {
+    background-color: #CED4DA;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+h4 {
+    margin-top: 1%;
+    margin-bottom: 0;
+    margin-left: 2%;
+}
+
+.topbanner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 8rem;
+    width: 100%;
+    background-color: #343A40;
+}
+
+.banner_text {
+    font-weight: bold;
+    font-size: 5rem;
+    z-index: 2;
+    position: fixed;
+    height: 8rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: #F8F9FA;
+}
+
+.icon_container {
+    position: fixed;
+    height: 8rem;
+    width: 100%;
+    z-index: 3;
+    justify-content: right;
+    align-items: center;
+    column-gap: 0.5%;
+    display: flex;
+}
+
+.icon {
+    width: auto;
+    height: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.cv_icon {
+    width: auto;
+    height: 10%;
+    display: flex;
+    background-color: black;
+    padding: 1rem;
+    margin-top: 0.2rem;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.75rem;
+    color: #343A40;
+    background-color: #F8F9FA;
+    cursor: pointer;
+}
+
+.profile_pic {
+    border-radius: 100%;
+    height: 35rem;
+    width: 35rem;
+    margin-left: auto;
+    margin-top: 10%;
+    box-shadow: 0 0 0.5rem black;
+}
+
+
+.projects_container {
+    display: grid;
+    width: 70%;
+    height: auto;
+    margin-left: 15%;
+    grid-template-columns: 55rem 55rem;
+    grid-template-rows: repeat(3, 30rem);
+    justify-content: center;
+    grid-column-gap: 5%;
+    grid-row-gap: 5%;
+    margin-top: 5%;
+}
+
+.project_window {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+
+img.media_format {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+video.media_format {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    box-shadow: 0 0 0.5vh black;
+}
+
+.about_me {
+    display: block;
+    width: 80rem;
+    height: auto;
+    background-color: #DEE2E6;
+    color: #212529;
+    box-shadow: 0 0 0.5vh black;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20rem;
+    display: grid;
+    justify-items: center;
+    grid-template-rows: 30% 70%;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.soft_skills {
+    width: 100%;
+    height: 20vh;
+}
+
+
+.Letterboxing {
+    position: absolute;
+    background-color: rgba(33, 37, 41, 0.8);
+    color: #F8F9FA;
+}
+
+.Letterboxing-Top {
+    width: 100%;
+    height: 10%;
+    top: 0;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 10%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.Letterboxing-Bottom {
+    width: 100%;
+    height: 25%;
+    bottom: 0;
+    font-size: 1.25rem;
+    text-align: justify;
+    line-height: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul.feature_list {
+    list-style-type: square;
+    box-sizing: border-box;
+    width: 100%;
+    height: 60%;
+    margin: 0;
+    padding: 0;
+    list-style-position: inside;
+    text-indent: 1%;
+}
+
+.project_specifications {
+    width: 100%;
+    height: 10%;
+    position: relative;
+    margin-top: 34.5rem;
+    display: flex;
+    align-items: center;
+    grid-column-gap: 2%;
+}
+
+.specs_item {
+    width: auto;
+    height: 100%;
+    border: 0.1rem solid #212529;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    text-align: center;
+    font-size: 1rem;
+    background-color: #6C757D;
+    color: #F8F9FA;
+}
+
+.project_link {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+}
+
+
+.skills_box {
+    width: 50rem;
+    height: 35rem;
+    margin-top: 10%;
+    margin-right: auto;
+    display: grid;
+    grid-template-rows: 2rem 15rem 2rem 15rem;
+}
+
+.profile_box {
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+
+.graph {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    padding-left: 25%;
+}
+
+.graph_item {
+    display: flex;
+    width: 7.5%;
+    border: 0.1rem solid #212529;
+    font-size: 1rem;
+    align-items: end;
+    justify-content: center;
+    margin-right: 1%;
+    margin-bottom: 5%;
+    background-color: #6C757D;
+    color: #F8F9FA;
+}
+
+.skills_header {
+    padding-left: 25%;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #212529;
+}
+
+
+
+

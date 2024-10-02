@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+<body>
+    <link rel="stylesheet" href="Page_Styles.css">
+
+    <!--Top Banner-->
+    <div class="banner_text" style="margin-left: 1%">Joe Barlow</div>
+    <div class="banner_text" style="justify-content: center">Gameplay Programmer</div>
+    <div class="icon_container">
+        <div class="cv_icon" onclick="LoadCV(1)">View CV</div>
+        <img src="../Pictures/github.png" alt="GitHub" class="icon" onclick="LoadGitHub()">
+        <img src="../Pictures/linked_in.png" alt="LinkedIn" class="icon" style="margin-right: 1%" onclick="LoadLinkedIn()">
+    </div>
+    <div class="topbanner"></div>
+    <div class="back_button" onclick="LoadPage(0)">< Back</div>
+    <!---->
+
+    <div class="main_image">
+        <video src="../Videos/TreasureIsland.mp4" class="media_format" autoplay muted loop></video>
+        <div class="title_box">
+            <h5>Treasure Island</h5>
+        </div>
+    </div>
+
+    <h3 style="font-size: 1.5em;">If you would like to know more about my contributions to this project or any other please reach out as I'd be happy to discuss my work in greater detail.</h3>
+    <div class="seperation_line_root">
+        <h3 style="font-size: 1.5em;">Introduction</h3>
+        <p style="font-size: 1.5em; text-align: justify">
+            Treasure island is a second year university project featuring local multiplayer.
+            Players use gamepads to control their ships and collect coins to bank at base.
+            To disrupt other players you can bump them or use items causing them to drop coins and spin out of control.
+        </p>
+    </div>
+
+    <h1 style="margin-top: 2%">Features</h1>
+
+    <div class="grid_container">
+        <!-- -->
+        <div class="info_display">
+            <img src="../Pictures/scoreboard.png" alt="Feature 1" class="feature_size" />
+            <div class="text_box">
+                <h2>Local Multiplayer:</h2>
+                <p>
+                    To set up local multiplayer I made use of Unity’s input system.
+                    This system allowed me to create different action maps for the main menu and gameplay and switch between them seamlessly.<br /><br />
+                    For example, the action map for the main menu featured controls such as: UI movement and Interact.
+                    Whereas, the gameplay action map would include: movement, aim, and use item.
+                    By using these actions with a player input component, every time an input is detected a function of the same name would be called on the attached C# script.
+                    E.g. the ‘Interact’ action would call the ‘OnInteract’ function.<br /><br />
+                    Treasure Island supports up to 4 players, each map has 4 relevant towers where a player can bank their coins.
+                    In the case where less than 4 players have joined, the remaining towers are disabled and feature as a decorative piece.
+                </p>
+            </div>
+            <div class="seperation_line"><h3>Why This Approach?</h3></div>
+            <div class="text_box_bottom">
+                <p style="margin-top: 0;">
+                    At the time of development this input system was a new addition to Unity and I wanted to learn how it works and whether it was better than the old system.
+                    It was easy to set up and allowed me to prototype the game very quickly.
+                </p>
+            </div>
+        </div>
+        <!-- -->
+        <div class="info_display">
+            <video src="../Videos/bump.mp4" class="feature_size" autoplay muted loop></video>
+            <div class="text_box">
+                <h2>Combat and Items:</h2>
+                <p>
+                    The most basic mechanic in player combat was the bump, put simply crashing into another player spins them out.
+                    To detect who was the attacker and who was the target, I used a combination of collision detection and raycasts.
+                    Two rays were positioned facing outwards on the front of each boat, therefore if both the collision object and raycast object match the current ship is the bumper.<br /><br />
+                    The attacker then calls a function on the target, transferring force in the forward direction of the attacker.
+                    This meant even a head-on collision would result in both ships being sent backwards - which is a nice touch.
+                    To account for multiple ships crashing into one target, I delayed the force application until the end of the frame and calculated the cross product of all contributing forces.<br /><br />
+                    Alongside this, I added a slip stream feature to allow ships to catch up with a player they are closely following.
+                    Finally, to add the finishing touches to combat I implemented a cannonball projectile and whirlwind speed boost, to boost diversity in player confrontation.
+                </p>
+            </div>
+            <div class="seperation_line"><h3>Why This Approach?</h3></div>
+            <div class="text_box_bottom">
+                <p style="margin-top: 0;">
+                    I wanted to make sure that basic combat was fun and engaging - making items feel like an extension of the combat not the foundation.
+                </p>
+            </div>
+        </div>
+        <!-- -->
+        <div class="info_display">
+            <img src="../Pictures/colour_select.png" alt="Feature 1" class="feature_size" style="object-fit:contain" />
+            <div class="text_box">
+                <h2>Colour Selecting:</h2>
+                <p>
+                    The idea behind selecting colour was to allow the player to customise the appearance of their ship’s sails and tower.
+                    There are 6 colours to choose from and only 1 player can hold a colour at any given time.<br /><br />
+                    The selection menu conveys which colour the user is hovering over by making the icon darker.
+                    This functionality affects each player independently as each person may be hovering over a different colour.
+                    Pressing the ‘A’ button on a colour will lock it in for that player, this results in the colour being removed from the available list and faded out for every other selection menu.<br /><br />
+                    To actually apply the colour, I swap out the active material on the ship’s sail with a preset material to match the chosen colour.
+                    I also update the little flags above each player’s tower as well as the particle system demonstrating the base area.
+                </p>
+            </div>
+            <div class="seperation_line"><h3>Why This Approach?</h3></div>
+            <div class="text_box_bottom">
+                <p style="margin-top: 0;">
+                    I believe colour selecting adds more personality to the game and gets players more invested as they choose a design that best represents them.
+                    I also think it helps identify people in your friend group easier, as you made an intentional decision on who was who.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="seperation_line_root" style="margin-top: 10%">
+        <h3 style="font-size: 1.5em;">What I Learned</h3>
+        <p style="font-size: 1.5em; text-align: justify; padding-bottom: 5%">
+            Despite there not being as much content, I had a lot of fun developing and playing Treasure Island as it was always being made with multiplayer in mind.
+            I found that playing Treasure Island with friends was naturally more fun simply because it was experienced with more people.<br /><br />
+            The game timer of 5 minutes feels too long in retrospect.
+            As nothing changes throughout the game whether that be items or map design, it quickly feels stale around the 3 minute mark.
+            However, map design is not simple and intelligent layouts are required to make an interesting and natural gameplay loop.
+            This is especially true for multiplayer games that take place on 1 screen as there is a much smaller space to work with.
+        </p>
+    </div>
+
+    <script src="../main.js"></script>
+    <script src="../button.js" defer></script>
+</body>
+</html>

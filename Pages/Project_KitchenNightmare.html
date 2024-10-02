@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+<body>
+    <link rel="stylesheet" href="Page_Styles.css">
+
+    <!--Top Banner-->
+    <div class="banner_text" style="margin-left: 1%">Joe Barlow</div>
+    <div class="banner_text" style="justify-content: center">Gameplay Programmer</div>
+    <div class="icon_container">
+        <div class="cv_icon" onclick="LoadCV(1)">View CV</div>
+        <img src="../Pictures/github.png" alt="GitHub" class="icon" onclick="LoadGitHub()">
+        <img src="../Pictures/linked_in.png" alt="LinkedIn" class="icon" style="margin-right: 1%" onclick="LoadLinkedIn()">
+    </div>
+    <div class="topbanner"></div>
+    <div class="back_button" onclick="LoadPage(0)">< Back</div>
+    <!---->
+
+    <div class="main_image">
+        <video src="../Videos/KitchenNightmare.mp4" class="media_format" autoplay muted loop></video>
+        <div class="title_box">
+            <h5>Kitchen Nightmare</h5>
+        </div>
+    </div>
+
+    <h3 style="font-size: 1.5em;">If you would like to know more about my contributions to this project or any other please reach out as I'd be happy to discuss my work in greater detail.</h3>
+    <div class="seperation_line_root">
+        <h3 style="font-size: 1.5em;">Introduction</h3>
+        <p style="font-size: 1.5em; text-align: justify">
+            Kitchen Nightmare is a final year university project I collaborated on with 6 other people.
+            As our team was programmer-heavy, we challenged ourselves by taking on large features independently and brought them all together for a feature-dense product.<br /><br />
+            Kitchen Nightmare is a procedurally generated dungeon crawler where The Chef must fight off the anthropomorphised ingredients that plague his mind.
+            With the stress of the soon-arriving food critic, The Chef can’t help but see every dish as an upward battle.
+        </p>
+    </div>
+
+    <h1 style="margin-top: 2%">Features</h1>
+
+    <div class="grid_container">
+        <!-- -->
+        <div class="info_display">
+            <img src="../Pictures/mst.png" alt="Feature 1" class="feature_size" />
+            <div class="text_box">
+                <h2>Procedural Dungeon Generator:</h2>
+                <p>
+                    To generate a series of random rooms and connect them with pathways, I made use of 3 main algorithms: Delaunay Triangulation, Minimum Spanning Tree (MST), and A* search algorithm.<br /><br />
+                    In this project, rooms are spawned within an enclosed space and triangulated in order of their x-position.
+                    Non-Delaunay triangles will then have an edge flipped to create better looking results.<br /><br />
+                    Each room is then connected to its closest neighbour and added to a list called the MST.
+                    However, for this project the result was slightly too linear and would slow down gameplay.
+                    To combat this I generated 2 additional pathways to create natural loops within the dungeon.<br /><br />
+                    Finally A* search was used to physically connect desired rooms using pathway assets.
+                    Each asset acts as a node that branches out from the start position to the end, using a cost heuristic to influence pathfinding.
+                    The heuristic value was determined by the Manhattan Distance from point A to B - creating straight and precise hallways for the player to navigate.
+                </p>
+            </div>
+            <div class="seperation_line"><h3>Why This Approach?</h3></div>
+            <div class="text_box_bottom">
+                <p style="margin-top: 0;">
+                    Since the dungeon rooms were spawned close together, a more natural and logical approach to pathfinding was necessary.
+                    The combination of MST and A* meant the dungeon could be connected in a smart and intelligent way, that best shows off my team member's work.
+                </p>
+            </div>
+        </div>
+        <!-- -->
+        <div class="info_display">
+            <img src="../Pictures/hammer.png" alt="Feature 1" class="feature_size" />
+            <div class="text_box">
+                <h2>Extendible Attack / Weapon System:</h2>
+                <p>
+                    I developed the framework of this attack system alongside another programmer as well as several unique weapons.
+                    We designed this system with a top-down approach, creating a base class for weapons to derive from.
+                    This included: Basic, Line, AOE, and Custom Collider types.<br /><br />
+                    To explain the pipeline of weapon creation I will use the mortar and pestle as an example.
+                    Firstly, the weapon inherits behaviour from both the Base Weapon class and AOE class.
+                    For example: weapon damage, collision detection, and radius size.
+                    Then the unique ability to pull in and push out enemies can be programmed independently on the derived mortar and pestle class.<br /><br />
+                    Due to the special functionality of certain weapons, it was important that damage timings were context sensitive.
+                    To simplify this, we implemented a ‘DealDamage’ function on the base weapon class and called it using animation events.
+                    This meant that no matter the weapon or effect, damage was handled the same way for all.
+                </p>
+            </div>
+            <div class="seperation_line"><h3>Why This Approach?</h3></div>
+            <div class="text_box_bottom">
+                <p style="margin-top: 0;">
+                    This solution offered an extendable and flexible framework, giving the team the freedom to create and balance as many weapons as required.
+                </p>
+            </div>
+        </div>
+        <!-- -->
+        <div class="info_display">
+            <img src="../Pictures/bubble.png" alt="Feature 1" class="feature_size" />
+            <div class="text_box">
+                <h2>Tutorial Instructions:</h2>
+                <p>
+                    The most notable feature I developed for the tutorial level was the thought/speech bubbles.
+                    These text boxes were intended to instruct the player on basic mechanics whilst staying contextually accurate narratively.<br /><br />
+                    The cloud texture initially appears in a small size above the player's head and grows in order to fit a larger body of text.
+                    Then a passed-in string called the ‘prompt’ is slowly added to the textbox to convey The Chef’s thoughts as instructions.<br /><br />
+                    I made this feature with both programmers and designers in mind, employing a simple prompt can be done by attaching the script to an object and filling in the display time and text in the editor.
+                    However, for a more complex series of thoughts a struct called ‘Instruction’ can either be queued immediately or added to a list that will be displayed sequentially.
+                </p>
+            </div>
+            <div class="seperation_line"><h3>Why This Approach?</h3></div>
+            <div class="text_box_bottom">
+                <p style="margin-top: 0;">
+                    As I was unsure of the scope of the tutorial in the beginning, I wanted to establish a simple and modular workflow when adding more instructions to the level.
+                    From a design perspective I am also fond of how speech bubbles play into the idea that The Chef is an overthinker who is to blame for his own delusions.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="seperation_line_root" style="margin-top: 10%">
+        <h3 style="font-size: 1.5em;">What I Learned</h3>
+        <p style="font-size: 1.5em; text-align: justify; padding-bottom: 5%">
+            Where I initially felt that top-down programming made a problem harder to conceptualise and prototype, I realised that is not always the case.
+            In situations where all the requirements are known before development, the top-down approach can provide structured and simple insight into how it can be done.
+            As a result, our attack system became a well thought out and extendible feature that included all the game’s required damage types.<br /><br />
+            I also believe that it's important to note, when working alongside many other programmers it would be beneficial to have regular updates with how features are being implemented.
+            It goes without saying that everyone should be following a plan that was established beforehand.
+            However, on a more personal level every programmer has a different style and approach when it comes to implementation,
+            and all these minor characteristics may eventually build up to create a larger problem when it comes to integration.
+        </p>
+    </div>
+
+    <script src="../main.js"></script>
+    <script src="../button.js" defer></script>
+</body>
+</html>
