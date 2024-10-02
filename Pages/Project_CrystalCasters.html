@@ -43,11 +43,11 @@
                 <h2>Gesture Casting:</h2>
                 <p>
                     It was important for this project to distinguish between correct and incorrect gestures with a desired level of precision.
-                    For this reason I made use of a plug-in called ‘Mivry’, which provided a template for 3D gesture recognition.
-                    Inside VR I used Mivry’s gesture manager to record and train gestures that were needed in-game.
+                    For this reason I made use of a plug-in called "Mivry", which provided a template for 3D gesture recognition.
+                    Inside VR I used Mivry's gesture manager to record and train gestures that were needed in-game.
                     I was able to train a gesture up to 50 times by recording different variants of the same movement.<br /><br />
-                    When a gesture is performed, Mivry returns a struct called ‘GestureCompletionData’ which contains information about the gesture that most closely resembles the player’s movement.
-                    My implementation makes use of this data in a number of ways, initially the program will compare the gesture’s name to that of the current crystal.
+                    When a gesture is performed, Mivry returns a struct called "GestureCompletionData" which contains information about the gesture that most closely resembles the player's movement.
+                    My implementation makes use of this data in a number of ways, initially the program will compare the gesture's name to that of the current crystal.
                     This filters out other gestures that are intended for different spells.
                     Following this, the similarity value of the completed gesture is then compared against a predefined threshold for the current crystal.
                     This meant that spells with more intricate gestures could have a higher similarity threshold for more accurate results.
@@ -69,11 +69,11 @@
                 <p>
                     The interactive belt was designed to store all items the player needs on a conceptual waist within arms reach.
                     The belt stores current crystals (charged and uncharged) as well as the teleportation device and wand.<br /><br />
-                    Each item is attached to a parent object called a ‘container’ which is positioned somewhere along the belt.
+                    Each item is attached to a parent object called a "container" which is positioned somewhere along the belt.
                     Then the local position of each item is set to (0,0,0) so that it is anchored to the container. Once an item is grabbed /
                     interacted with, it is re-parented to the hand that picked it up and gravity is enabled.<br /><br />
                     This means an item can be removed from the belt and inspected by the player before being dropped and hitting the floor (or other object).
-                    Once a collision is registered that is not the player’s hands, the item is re-parented to its original container and local position and rotation is reset - returning it to the belt.
+                    Once a collision is registered that is not the player's hands, the item is re-parented to its original container and local position and rotation is reset - returning it to the belt.
                 </p>
             </div>
             <div class="seperation_line"><h3>Why This Approach?</h3></div>
@@ -93,7 +93,7 @@
                     To charge a crystal it must be imbued with the magic of 3 wisps. Each time a crystal is charged, the stage is advanced and its washed out colour becomes more vibrant.<br /><br />
                     When charging a crystal, a distance check is performed between itself and the wisp.
                     If the crystal is close enough, a line renderer will draw a beam between the 2 objects.
-                    Once contact has been held for 5 seconds the crystal’s material is updated to a ‘weak’ blue.<br /><br />
+                    Once contact has been held for 5 seconds the crystal's material is updated to a "weak" blue.<br /><br />
                     The other wisps are then notified that the current crystal has been found.
                     Ensuring that another uncharged crystal can not steal the limited supply of wisps within one level.
                     Once the 3rd and final wisp is collected the crystal is reformed, updating its tag and material to reflect its newly acquired element.
@@ -111,12 +111,12 @@
     <div class="seperation_line_root" style="margin-top: 10%">
         <h3 style="font-size: 1.5em;">What I Learned</h3>
         <p style="font-size: 1.5em; text-align: justify; padding-bottom: 5%">
-            In my experience gesture recognition isn’t anywhere near accurate enough for spell casting.
+            In my experience gesture recognition isn't anywhere near accurate enough for spell casting.
             I imagine this is because 3D pattern recognition requires far more training than the plug-in would allow,
             and different people may produce various results when gesturing simply because of body proportions.
             However, it may just not be suitable for this kind of application and alternatively an image-based recognition system would be better.
-            Retrospectively, “drawing” a symbol in 3D space and converting it into a 2D image seems the far better choice for spell casting.<br /><br />
-            Bonus: I also found developing in VR to be incredibly rewarding, as it's the ultimate expression of seeing your work “come to life” :)
+            Retrospectively, "drawing" a symbol in 3D space and converting it into a 2D image seems the far better choice for spell casting.<br /><br />
+            Bonus: I also found developing in VR to be incredibly rewarding, as it's the ultimate expression of seeing your work "come to life" :)
         </p>
     </div>
 

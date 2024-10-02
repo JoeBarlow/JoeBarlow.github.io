@@ -27,7 +27,7 @@
     <div class="seperation_line_root">
         <h3 style="font-size: 1.5em;">Introduction</h3>
         <p style="font-size: 1.5em; text-align: justify">
-            The goal of this project was to dissect Rocksteady’s Free Flow system used in the Batman Arkham Series and recreate it whilst learning Unreal Engine 4.
+            The goal of this project was to dissect Rocksteady's Free Flow system used in the Batman Arkham Series and recreate it whilst learning Unreal Engine 4.
             This implementation makes use of Mixamo animations and root motion to bring combat to life, as well as a finite state machine for managing enemy state transitions.
         </p>
     </div>
@@ -41,12 +41,12 @@
             <div class="text_box">
                 <h2>Finite State Machine and Enemy Handler:</h2>
                 <p>
-                    In this system enemy states are defined by an Enum called ‘state’ and evaluated in a switch statement inside enemy AI.
+                    In this system enemy states are defined by an Enum called "state" and evaluated in a switch statement inside enemy AI.
                     Each enemy manages its own tracking, strafing and retreating, but cannot attack until told to do so by the handler.<br /><br />
                     To ensure enemies attack the player in a manner that felt fair, it was important to control the group using an enemy handler.
                     Initially the algorithm would search through all enemies and queue an attack for the first available one.
                     This solution was predictable and stale, sometimes prompting the furthest away enemy to attack.<br /><br />
-                    To help introduce some variety, I included another feature called “double attack” which had a random chance to queue 2 enemy attacks at once.
+                    To help introduce some variety, I included another feature called "double attack" which had a random chance to queue 2 enemy attacks at once.
                     This feature had a 20% chance of triggering and would increase by 10% with each successive failure.
                 </p>
             </div>
@@ -68,7 +68,7 @@
                     After importing them into Unreal Engine I was able to access the timeline of each animation and place keyframes to update my finite state machine.
                     I used this functionality to control state transitions with frame-accurate precision.<br /><br />
                     Animations that require movement sometimes include root motion to properly simulate the transform from start to finish.
-                    However, I could not get UE4’s integration to work as root motion would simply move the mesh and not the actor, resulting in a jarring snap as the model reset to its pivot.
+                    However, I could not get UE4's integration to work as root motion would simply move the mesh and not the actor, resulting in a jarring snap as the model reset to its pivot.
                     Fortunately, I was able to extract the root motion data from the animation and apply it to the pivot separately.<br /><br />
                     This solution allowed me to implement the player dodge and successive attack without limitation - creating a more fluid feel to the player controller.
                 </p>
@@ -90,16 +90,16 @@
                     To ensure the indicator was distinct and visible, I decided to place the icon in world space above the attacking enemy.
                     When visible, the icon rotates itself in the y-axis to face the camera - creating better visibility.<br /><br />
                     Using animation keyframes I created 2 flags in the enemy attack animation, the 1st to activate the indicator and the 2nd to disable it.
-                    If the player inputs a parry during this window they will interrupt the attack with a ‘counter’.
-                    The scalability of this system is limited as increasing the number of attacking enemies inflates the complexity of unique ‘counter’ animations.<br /><br />
-                    To remedy this I opted to ‘snap-turn’ the player when performing a parry, resulting in an instant rotation towards the attacking enemy.
+                    If the player inputs a parry during this window they will interrupt the attack with a "counter".
+                    The scalability of this system is limited as increasing the number of attacking enemies inflates the complexity of unique "counter" animations.<br /><br />
+                    To remedy this I opted to "snap-turn" the player when performing a parry, resulting in an instant rotation towards the attacking enemy.
                     Although rigid, this solution would cater to as many enemies as necessary and felt like a reasonable compromise for this project.
                 </p>
             </div>
             <div class="seperation_line"><h3>Why This Approach?</h3></div>
             <div class="text_box_bottom">
                 <p style="margin-top: 0;">
-                    This system is now adaptable to new types of enemy attacks, as it simply requires animation flags to define the ‘counter’ window.
+                    This system is now adaptable to new types of enemy attacks, as it simply requires animation flags to define the "counter" window.
                     I also decided a yellow exclamation mark was most suitable to convey the danger of a medium risk.
                 </p>
             </div>
@@ -114,7 +114,7 @@
             Overall this process could be improved by using inheritance, as states are modular and easier to implement in larger-scale projects.<br /><br />
             Another thing to note is the predictable nature of the enemy handler.
             As enemies are controlled as a group, the individual is less responsive and dynamic.
-            For example, the closest enemy to the player should take priority in the attack order and ‘react’ to the player's actions.
+            For example, the closest enemy to the player should take priority in the attack order and "react" to the player's actions.
             In an ideal world, the individual enemy would make an executive decision to respond to the player without the instruction from the enemy handler.<br /><br />
             It is clear enemy attack logic cannot be entirely controlled as a group and must allow some freedom to the finite state machine.
             I also believe a priority heuristic should play a part in deciding the next attacking enemy, for example: <b>priority = distance + time since last attack</b>.

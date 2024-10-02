@@ -42,12 +42,12 @@
             <div class="text_box">
                 <h2>Local Multiplayer:</h2>
                 <p>
-                    To set up local multiplayer I made use of Unity’s input system.
+                    To set up local multiplayer I made use of Unity's input system.
                     This system allowed me to create different action maps for the main menu and gameplay and switch between them seamlessly.<br /><br />
                     For example, the action map for the main menu featured controls such as: UI movement and Interact.
                     Whereas, the gameplay action map would include: movement, aim, and use item.
                     By using these actions with a player input component, every time an input is detected a function of the same name would be called on the attached C# script.
-                    E.g. the ‘Interact’ action would call the ‘OnInteract’ function.<br /><br />
+                    E.g. the "Interact" action would call the "OnInteract" function.<br /><br />
                     Treasure Island supports up to 4 players, each map has 4 relevant towers where a player can bank their coins.
                     In the case where less than 4 players have joined, the remaining towers are disabled and feature as a decorative piece.
                 </p>
@@ -89,13 +89,13 @@
             <div class="text_box">
                 <h2>Colour Selecting:</h2>
                 <p>
-                    The idea behind selecting colour was to allow the player to customise the appearance of their ship’s sails and tower.
+                    The idea behind selecting colour was to allow the player to customise the appearance of their ship's sails and tower.
                     There are 6 colours to choose from and only 1 player can hold a colour at any given time.<br /><br />
                     The selection menu conveys which colour the user is hovering over by making the icon darker.
                     This functionality affects each player independently as each person may be hovering over a different colour.
-                    Pressing the ‘A’ button on a colour will lock it in for that player, this results in the colour being removed from the available list and faded out for every other selection menu.<br /><br />
-                    To actually apply the colour, I swap out the active material on the ship’s sail with a preset material to match the chosen colour.
-                    I also update the little flags above each player’s tower as well as the particle system demonstrating the base area.
+                    Pressing the "A" button on a colour will lock it in for that player, this results in the colour being removed from the available list and faded out for every other selection menu.<br /><br />
+                    To actually apply the colour, I swap out the active material on the ship's sail with a preset material to match the chosen colour.
+                    I also update the little flags above each player's tower as well as the particle system demonstrating the base area.
                 </p>
             </div>
             <div class="seperation_line"><h3>Why This Approach?</h3></div>

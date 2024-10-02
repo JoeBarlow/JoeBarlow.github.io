@@ -45,7 +45,7 @@
                     I decided to implement the marching cubes algorithm to help conceptualise and triangulate terrain mesh given a dataset of noise values.<br /><br />
                     Firstly, the algorithm breaks down this scalar field into voxels each containing 8 vertices - categorised as an 8-bit integer called the case index.
                     For each vertex, a 3D Perlin Noise function is used to calculate a density value given an (xyz) position.
-                    The case index is then constructed by changing bits into ‘1’ for each vertex that is over the density threshold.
+                    The case index is then constructed by changing bits into "1" for each vertex that is over the density threshold.
                     Finally, the case index is used in a lookup table to retrieve triangle configuration for that voxel.<br /><br />
                     I then repeat this process for as many voxels as is required - determined by the chunk size variable in the inspector.
                     This setup allows me to customise the length, width and height of generated terrain, and facilitates the desired generation of caves and cliffs.
@@ -65,9 +65,9 @@
             <div class="text_box">
                 <h2>Layered Octaves of Noise:</h2>
                 <p>
-                    In conventional procedural generators I have seen ‘lacunarity’ and ‘persistence’ modifiers assigned to frequency and amplitude respectively.
+                    In conventional procedural generators I have seen "lacunarity" and "persistence" modifiers assigned to frequency and amplitude respectively.
                     However, in this project I wanted to ensure each value could be modified independently for each iteration of octave.<br /><br />
-                    To begin with I built upon Unity’s Perlin Noise function to increase its input from 2D to 3D.
+                    To begin with I built upon Unity's Perlin Noise function to increase its input from 2D to 3D.
                     Then a final density value is calculated by combining a new layer of noise for each octave.
                     Whilst iterating through octaves it is common practice to double frequency and half amplitude, as this produces conventional cascading detail in landscape.
                     However, my implementation loops through a predefined list of octave settings meaning the rate in which they change is down to user discretion.
@@ -91,8 +91,8 @@
                     For this reason I felt it was important to have all procedural settings accessible from the inspector.<br /><br />
                     To begin with, I exposed all necessary variables to the editor and included headers and tooltips to accompany the options.
                     The headers helped to organise the variables into logical groups, whilst the tooltips provided further clarity should the user need it.
-                    Additionally, I created a custom editor which allowed me to clamp certain values within an expected range and include buttons for custom functionality - such as ‘Reset to Default Values’.<br /><br />
-                    I also included another button called ‘Load Biome Preset’, which reads data from a scriptable object and copies the values into the editor.
+                    Additionally, I created a custom editor which allowed me to clamp certain values within an expected range and include buttons for custom functionality - such as "Reset to Default Values".<br /><br />
+                    I also included another button called "Load Biome Preset", which reads data from a scriptable object and copies the values into the editor.
                     This way multiple terrain settings can be saved at once and a designer can quickly swap them in and out.
                 </p>
             </div>
@@ -109,13 +109,13 @@
         <p style="font-size: 1.5em; text-align: justify; padding-bottom: 5%">
             Before starting this project, I thought it would be easy to generate interesting and varied terrain with parameters that were simple and concise.
             However, I quickly discovered that influencing terrain generation could become another project in itself.
-            Changing the frequency by as little as ‘0.1’ can have a major impact on generated terrain, and incorporating a floor offset can raise landmass several layers above sea level.
+            Changing the frequency by as little as "0.1" can have a major impact on generated terrain, and incorporating a floor offset can raise landmass several layers above sea level.
             To summarise, creating the procedural generator is half the battle - just because you have the means to generate terrain doesn't mean it will be interesting.<br /><br />
             Towards the end of the project it became increasingly obvious how sluggish terrain generation can be on a single core of a cpu.
             This problem can mostly be solved by generating terrain in smaller chunks, but I predict this resolution has diminishing returns as the terrain quality increases.
             If I return to this project in the future, I would love to refactor this code and speed it up by moving it into a compute shader.<br /><br />
             Bonus: This is the first project where I attempted to write my own shaders using ShaderLab.
-            I had no idea how different this process could be when compared to Unity’s ShaderGraph, and was faced with a different style of programming than I was used to - especially working with the render pipeline.<br /><br />
+            I had no idea how different this process could be when compared to Unity's ShaderGraph, and was faced with a different style of programming than I was used to - especially working with the render pipeline.<br /><br />
             I have thoroughly enjoyed working on this project as procedural generation has been a long-time interest of mine.
             In the future I plan to make good use of the skills I have learned here, optimising my current solution and maybe even fleshing out the world with some signs of life.
         </p>

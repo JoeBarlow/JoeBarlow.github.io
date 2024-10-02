@@ -30,7 +30,7 @@
             Kitchen Nightmare is a final year university project I collaborated on with 6 other people.
             As our team was programmer-heavy, we challenged ourselves by taking on large features independently and brought them all together for a feature-dense product.<br /><br />
             Kitchen Nightmare is a procedurally generated dungeon crawler where The Chef must fight off the anthropomorphised ingredients that plague his mind.
-            With the stress of the soon-arriving food critic, The Chef can’t help but see every dish as an upward battle.
+            With the stress of the soon-arriving food critic, The Chef can't help but see every dish as an upward battle.
         </p>
     </div>
 
@@ -76,7 +76,7 @@
                     For example: weapon damage, collision detection, and radius size.
                     Then the unique ability to pull in and push out enemies can be programmed independently on the derived mortar and pestle class.<br /><br />
                     Due to the special functionality of certain weapons, it was important that damage timings were context sensitive.
-                    To simplify this, we implemented a ‘DealDamage’ function on the base weapon class and called it using animation events.
+                    To simplify this, we implemented a "DealDamage" function on the base weapon class and called it using animation events.
                     This meant that no matter the weapon or effect, damage was handled the same way for all.
                 </p>
             </div>
@@ -96,9 +96,9 @@
                     The most notable feature I developed for the tutorial level was the thought/speech bubbles.
                     These text boxes were intended to instruct the player on basic mechanics whilst staying contextually accurate narratively.<br /><br />
                     The cloud texture initially appears in a small size above the player's head and grows in order to fit a larger body of text.
-                    Then a passed-in string called the ‘prompt’ is slowly added to the textbox to convey The Chef’s thoughts as instructions.<br /><br />
+                    Then a passed-in string called the "prompt" is slowly added to the textbox to convey The Chef's thoughts as instructions.<br /><br />
                     I made this feature with both programmers and designers in mind, employing a simple prompt can be done by attaching the script to an object and filling in the display time and text in the editor.
-                    However, for a more complex series of thoughts a struct called ‘Instruction’ can either be queued immediately or added to a list that will be displayed sequentially.
+                    However, for a more complex series of thoughts a struct called "Instruction" can either be queued immediately or added to a list that will be displayed sequentially.
                 </p>
             </div>
             <div class="seperation_line"><h3>Why This Approach?</h3></div>
@@ -115,7 +115,7 @@
         <p style="font-size: 1.5em; text-align: justify; padding-bottom: 5%">
             Where I initially felt that top-down programming made a problem harder to conceptualise and prototype, I realised that is not always the case.
             In situations where all the requirements are known before development, the top-down approach can provide structured and simple insight into how it can be done.
-            As a result, our attack system became a well thought out and extendible feature that included all the game’s required damage types.<br /><br />
+            As a result, our attack system became a well thought out and extendible feature that included all the game's required damage types.<br /><br />
             I also believe that it's important to note, when working alongside many other programmers it would be beneficial to have regular updates with how features are being implemented.
             It goes without saying that everyone should be following a plan that was established beforehand.
             However, on a more personal level every programmer has a different style and approach when it comes to implementation,

@@ -41,13 +41,13 @@
             <div class="text_box">
                 <h2>Touch Controls:</h2>
                 <p>
-                    The idea behind movement was to use touch controls to ‘fling’ the cell in the opposite direction to where the player dragged.
+                    The idea behind movement was to use touch controls to "fling" the cell in the opposite direction to where the player dragged.
                     This was supposed to resemble a slingshot-type movement accompanied by a directional arrow.<br /><br />
                     The arrow pointer grows outward from the cell to display the direction and power before the player releases the touch.
-                    It does this by subtracting the current position of the player’s finger from the starting position, and rotating and scaling the arrow to match.
+                    It does this by subtracting the current position of the player's finger from the starting position, and rotating and scaling the arrow to match.
                     However, this implementation quickly became confusing as the player would lose track of where they started the movement from.
-                    Therefore, to supplement the arrow I included a ‘shadow pointer’ which draws a line between the starting and current position of the touch-drag.<br /><br />
-                    Other abilities and interactions were also controlled by touch but were context sensitive. For example, the ‘spike’ ability could only be activated whilst the cell was in the air.
+                    Therefore, to supplement the arrow I included a "shadow pointer" which draws a line between the starting and current position of the touch-drag.<br /><br />
+                    Other abilities and interactions were also controlled by touch but were context sensitive. For example, the "spike" ability could only be activated whilst the cell was in the air.
                 </p>
             </div>
             <div class="seperation_line"><h3>Why This Approach?</h3></div>
@@ -65,7 +65,7 @@
                 <h2>Spike, Resize, Divide:</h2>
                 <p>
                     The spike mechanic has a simple concept, it allows the cell to stick to certain walls.
-                    It does this by extending the circle collider of the cell to better match its new form, then waits for a collision with a ‘wall’ object.
+                    It does this by extending the circle collider of the cell to better match its new form, then waits for a collision with a "wall" object.
                     If the cell then touches a wall all velocity is removed and gravity is disabled for as long as the interaction is held.<br /><br />
                     The resize mechanic has one purpose: increase the mass of the cell.
                     Doing this allows the player to build up more force when falling and destroy cracked floor.
@@ -96,14 +96,14 @@
                     The walls are spawned randomly between 3 points in the left, middle, and right.
                     This creates lanes of danger and safety, encouraging the player to plan ahead.<br /><br />
                     The final mechanic starts once the boss' health is below 50%.
-                    The room is divided into 2 and falling spikes are dropped on the player’s side.
+                    The room is divided into 2 and falling spikes are dropped on the player's side.
                     To avoid being squashed the player must quickly hit the divide wall in the centre, discarding the previous cell and evading death.
                 </p>
             </div>
             <div class="seperation_line"><h3>Why This Approach?</h3></div>
             <div class="text_box_bottom">
                 <p style="margin-top: 0;">
-                    Thematically, I liked the reveal that ‘The Experiment’ was trying to escape its test bottle this whole time.
+                    Thematically, I liked the reveal that "The Experiment" was trying to escape its test bottle this whole time.
                     The boss battle being in a slightly different format than the usual upward climb is also a nice change of pace, and shows how versatile the mechanics are.
                 </p>
             </div>
@@ -114,7 +114,7 @@
         <p style="font-size: 1.5em; text-align: justify; padding-bottom: 5%">
             As I was the sole developer on this project I play-tested the game a lot.
             After getting quite good my perspective of what made a level difficult was skewed.
-            I believe the early game of ‘The Experiment’ is far too difficult and mechanics are introduced a lot earlier than needed.
+            I believe the early game of "The Experiment" is far too difficult and mechanics are introduced a lot earlier than needed.
             If I were to rework these levels I would take my time and allow the difficulty to progress gradually.
             Level one should really be no more than a couple of jumps - difficulty aside it's also important to be introduced to a reward loop as soon as possible.<br /><br />
             Another more simple lesson is to consider how a mobile game will scale with the varying screen size and aspect ratio of different devices.
