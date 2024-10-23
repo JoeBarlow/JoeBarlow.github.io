@@ -22,7 +22,18 @@ h3 {
     margin-top: 0;
     padding-top: 0.5%;
     color: #212529;
+    font-size: 1.5rem;
 }
+
+h4 {
+    left: 50%;
+    text-align: center;
+    margin-top: 0;
+    padding-top: 0.5%;
+    color: #212529;
+    font-size: 1.5rem;
+}
+
 
 .topbanner {
     position: fixed;
@@ -159,7 +170,8 @@ video.feature_size {
     left: 42.5%;
     bottom: 95%;
     position: relative;
-    display: inline-block; 
+    display: inline-block;
+    font-size: 1.5rem;
 }
 .seperation_line_root {
     background-color: #212529;
@@ -171,6 +183,7 @@ video.feature_size {
     margin-top: 2.5%;
     margin-bottom: 5%;
     display: inline-block;
+    font-size: 1.5rem;
 }
 
 .text_box {
@@ -203,4 +216,97 @@ video.feature_size {
     text-align: justify;
     line-height: 100%;
     color: #212529;
+}
+
+@media only screen and (max-width: 800px) {
+    h3 {
+        left: 50%;
+        text-align: center;
+        margin-top: 0;
+        padding-top: 0.5%;
+        color: #212529;
+        font-size: 2rem;
+    }
+
+    h4 {
+        left: 50%;
+        text-align: center;
+        margin-top: 0;
+        padding-top: 0.5%;
+        color: #212529;
+        font-size: 2rem;
+    }
+
+    .seperation_line_root {
+        background-color: #212529;
+        color: #212529;
+        width: 50%;
+        height: 0.2rem;
+        left: 25%;
+        position: relative;
+        margin-top: 2.5%;
+        margin-bottom: 5%;
+        display: inline-block;
+        font-size: 2rem;
+    }
+
+    .grid_container {
+        display: grid;
+        width: 100%;
+        height: auto;
+        grid-template-columns: 100rem;
+        justify-content: center;
+        grid-row-gap: 5%;
+    }
+
+    .info_display {
+        width: 100%;
+        height: 60rem;
+        background-color: #DEE2E6;
+        box-shadow: 0 0 0.5vh black;
+    }
+
+    .text_box {
+        width: 63%;
+        height: 70%;
+        position: relative;
+        left: 35%;
+        bottom: 100%;
+        display: inline-block;
+        font-size: 2em;
+        padding-left: 1%;
+        padding-right: 1%;
+        word-wrap: break-word;
+        text-align: justify;
+        line-height: 100%;
+        color: #212529;
+    }
+
+    .text_box_bottom {
+        width: 63%;
+        height: 10%;
+        position: relative;
+        left: 35%;
+        bottom: 92.5%;
+        display: inline-block;
+        font-size: 2em;
+        padding-left: 1%;
+        padding-right: 1%;
+        word-wrap: break-word;
+        text-align: justify;
+        line-height: 100%;
+        color: #212529;
+    }
+
+    img.feature_size {
+        width: 35%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    video.feature_size {
+        width: 35%;
+        height: 100%;
+        object-fit: contain;
+    }
 }

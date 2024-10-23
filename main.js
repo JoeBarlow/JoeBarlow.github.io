@@ -3,12 +3,10 @@ function setFontSize() {
 
     var fontSize = 14; //default font size
 
-    if (viewportWidth <= 600) {
-        fontSize = 4;
-    } else if (viewportWidth <= 800) {
+    if (viewportWidth <= 800) {
         fontSize = 6;
     } else if (viewportWidth <= 1200) {
-        fontSize = 8;
+        fontSize = 10;
     } else if (viewportWidth <= 1920) {
         fontSize = 12;
     }

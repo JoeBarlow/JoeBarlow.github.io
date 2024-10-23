@@ -27,7 +27,7 @@ h4 {
 
 .banner_text {
     font-weight: bold;
-    font-size: 5rem;
+    font-size: 3vw;
     z-index: 2;
     position: fixed;
     height: 8rem;
@@ -79,8 +79,6 @@ h4 {
     margin-top: 10%;
     box-shadow: 0 0 0.5rem black;
 }
-
-
 .projects_container {
     display: grid;
     width: 70%;
@@ -92,6 +90,21 @@ h4 {
     grid-column-gap: 5%;
     grid-row-gap: 5%;
     margin-top: 5%;
+}
+
+@media only screen and (max-width: 800px){
+    .projects_container {
+        display: grid;
+        width: 70%;
+        height: 340rem;
+        margin-left: 15%;
+        grid-template-columns: 80rem;
+        grid-template-rows: repeat(6, 50rem);
+        justify-content: center;
+        grid-column-gap: 5%;
+        grid-row-gap: 2.5%;
+        margin-top: 5%;
+    }
 }
 
 .project_window {
@@ -143,13 +156,21 @@ video.media_format {
     position: absolute;
     background-color: rgba(33, 37, 41, 0.8);
     color: #F8F9FA;
+    font-size: 1.25rem;
+}
+@media only screen and (max-width: 800px) {
+    .Letterboxing {
+        position: absolute;
+        background-color: rgba(33, 37, 41, 0.8);
+        color: #F8F9FA;
+        font-size: 2rem;
+    }
 }
 
 .Letterboxing-Top {
     width: 100%;
     height: 10%;
     top: 0;
-    font-size: 1rem;
     text-align: center;
     line-height: 10%;
     font-family: Arial, Helvetica, sans-serif;
@@ -160,7 +181,6 @@ video.media_format {
     width: 100%;
     height: 25%;
     bottom: 0;
-    font-size: 1.25rem;
     text-align: justify;
     line-height: 1.5rem;
     font-family: Arial, Helvetica, sans-serif;
@@ -171,10 +191,24 @@ ul.feature_list {
     box-sizing: border-box;
     width: 100%;
     height: 60%;
-    margin: 0;
+    margin-top: 1rem;
     padding: 0;
     list-style-position: inside;
     text-indent: 1%;
+    line-height: 1.25rem;
+}
+@media only screen and (max-width: 800px) {
+    ul.feature_list {
+        list-style-type: square;
+        box-sizing: border-box;
+        width: 100%;
+        height: 60%;
+        margin-top: 1rem;
+        padding: 0;
+        list-style-position: inside;
+        text-indent: 1%;
+        line-height: 2rem;
+    }
 }
 
 .project_specifications {
@@ -186,10 +220,21 @@ ul.feature_list {
     align-items: center;
     grid-column-gap: 2%;
 }
+@media only screen and (max-width: 800px) {
+    .project_specifications {
+        width: 100%;
+        height: 10%;
+        position: relative;
+        margin-top: 58rem;
+        display: flex;
+        align-items: center;
+        grid-column-gap: 2%;
+    }
+}
 
 .specs_item {
     width: auto;
-    height: 100%;
+    height: auto;
     border: 0.1rem solid #212529;
     padding-left: 2.5%;
     padding-right: 2.5%;
@@ -198,6 +243,20 @@ ul.feature_list {
     background-color: #6C757D;
     color: #F8F9FA;
 }
+@media only screen and (max-width: 800px) {
+    .specs_item {
+        width: auto;
+        height: auto;
+        border: 0.1rem solid #212529;
+        padding-left: 2.5%;
+        padding-right: 2.5%;
+        text-align: center;
+        font-size: 1.5rem;
+        background-color: #6C757D;
+        color: #F8F9FA;
+    }
+}
+
 
 .project_link {
     width: 100%;
@@ -213,7 +272,17 @@ ul.feature_list {
     margin-top: 10%;
     margin-right: auto;
     display: grid;
-    grid-template-rows: 2rem 15rem 2rem 15rem;
+    grid-template-rows: 3rem 15rem 3rem 15rem;
+}
+@media only screen and (max-width: 800px) {
+    .skills_box {
+        width: 50rem;
+        height: 35rem;
+        margin-top: 10%;
+        margin-right: auto;
+        display: grid;
+        grid-template-rows: 4rem 15rem 4rem 15rem;
+    }
 }
 
 .profile_box {
@@ -241,12 +310,37 @@ ul.feature_list {
     background-color: #6C757D;
     color: #F8F9FA;
 }
+@media only screen and (max-width: 800px) {
+    .graph_item {
+        display: flex;
+        width: 12.5%;
+        border: 0.1rem solid #212529;
+        font-size: 1.5rem;
+        align-items: end;
+        justify-content: center;
+        margin-right: 1%;
+        margin-bottom: 5%;
+        background-color: #6C757D;
+        color: #F8F9FA;
+        padding-top: 1%;
+    }
+}
+
 
 .skills_header {
     padding-left: 25%;
     font-size: 2rem;
     font-weight: bold;
     color: #212529;
+}
+
+@media only screen and (max-width: 800px) {
+    .skills_header {
+        padding-left: 25%;
+        font-size: 4rem;
+        font-weight: bold;
+        color: #212529;
+    }
 }
 
 
