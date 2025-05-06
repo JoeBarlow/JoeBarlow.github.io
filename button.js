@@ -38,7 +38,7 @@ function LoadGitHub() {
 }
 
 function LoadLinkedIn() {
-    window.location.assign("https://www.linkedin.com/in/joe-barl0w/");
+    window.location.assign("https://www.linkedin.com/in/joebarl0w/");
 }
 
 function LoadCV(bannerDepth) {
