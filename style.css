@@ -240,7 +240,7 @@ ul.feature_list {
     padding-right: 2.5%;
     text-align: center;
     font-size: 1rem;
-    background-color: #6C757D;
+    background-color: #829ab1;
     color: #F8F9FA;
 }
 @media only screen and (max-width: 800px) {
@@ -252,7 +252,7 @@ ul.feature_list {
         padding-right: 2.5%;
         text-align: center;
         font-size: 1.5rem;
-        background-color: #6C757D;
+        background-color: #829ab1;
         color: #F8F9FA;
     }
 }
@@ -268,20 +268,20 @@ ul.feature_list {
 
 .skills_box {
     width: 50rem;
-    height: 35rem;
-    margin-top: 10%;
+    height: 25rem;
+    margin-top: 12.5%;
     margin-right: auto;
     display: grid;
-    grid-template-rows: 3rem 15rem 3rem 15rem;
+    grid-template-rows: 3rem 10rem 3rem 10rem;
 }
 @media only screen and (max-width: 800px) {
     .skills_box {
         width: 50rem;
-        height: 35rem;
-        margin-top: 10%;
+        height: 30rem;
+        margin-top: 12.5%;
         margin-right: auto;
         display: grid;
-        grid-template-rows: 4rem 15rem 4rem 15rem;
+        grid-template-rows: 4rem 10rem 4rem 10rem;
     }
 }
 
@@ -293,42 +293,45 @@ ul.feature_list {
 
 .graph {
     width: 100%;
+    height: 30%;
     display: flex;
-    align-items: flex-end;
-    padding-left: 25%;
+    align-items: start;
+    justify-content: center;
 }
 
 .graph_item {
     display: flex;
-    width: 7.5%;
+    height: auto;
+    width: 12%;
     border: 0.1rem solid #212529;
-    font-size: 1rem;
+    font-size: 1.5rem;
     align-items: end;
     justify-content: center;
     margin-right: 1%;
     margin-bottom: 5%;
-    background-color: #6C757D;
+    background-color: #829ab1;
     color: #F8F9FA;
 }
 @media only screen and (max-width: 800px) {
     .graph_item {
         display: flex;
-        width: 12.5%;
+        height: auto;
+        width: 15%;
         border: 0.1rem solid #212529;
-        font-size: 1.5rem;
+        font-size: 2rem;
         align-items: end;
         justify-content: center;
         margin-right: 1%;
         margin-bottom: 5%;
-        background-color: #6C757D;
+        background-color: #829ab1;
         color: #F8F9FA;
         padding-top: 1%;
     }
 }
 
-
 .skills_header {
-    padding-left: 25%;
+    text-align: center;
+    height: 20%;
     font-size: 2rem;
     font-weight: bold;
     color: #212529;
@@ -336,11 +339,18 @@ ul.feature_list {
 
 @media only screen and (max-width: 800px) {
     .skills_header {
-        padding-left: 25%;
-        font-size: 4rem;
+        text-align: center;
+        height: 20%;
+        font-size: 3rem;
         font-weight: bold;
         color: #212529;
     }
+}
+
+.skills_text {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #212529;
 }
 
 
